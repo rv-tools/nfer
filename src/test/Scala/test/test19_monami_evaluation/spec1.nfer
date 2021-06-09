@@ -1,0 +1,14 @@
+
+// ================
+// Specification 1:
+// ----------------
+
+// MonAmi:
+// !exist A, B . A < B & same(A,B)
+
+IVAL :- BEGIN before END
+  where BEGIN.interval = END.interval
+  map {interval -> BEGIN.interval, data -> BEGIN.data}
+
+FOUND :- A:IVAL before B:IVAL
+  where A.data = B.data

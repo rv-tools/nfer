@@ -1,0 +1,20 @@
+{"execution": [["begin", 1, "DL_MOBPRM" ],
+  ["begin", 2, "DL_FAIL"],
+  ["end", 2],
+  ["end", 1],
+  ["begin", 3, "DL_FAIL"],
+  ["end", 3],
+  ["begin", 4, "DL_MOBPRM" ],
+  ["end", 4],
+  ["begin", 5, "DL_FAIL"],
+  ["end", 5],
+  ["begin", 6, "DL_ARMPRM" ],
+  ["begin", 7, "DL_FAIL"],
+  ["end", 7],
+  ["end", 6],
+  ["begin", 8, "DL_FAIL"],
+  ["end", 8],
+  ["begin", 9, "DL_ARMPRM" ],
+  ["end", 9]
+]
+}

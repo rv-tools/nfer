@@ -1,0 +1,34 @@
+
+// ===================
+// Specification  9.2:
+// -------------------
+
+// MonAmi:
+//  exists CB, CE, VB, VE, S .
+//    CB("COMM_BEGIN") & CE("COMM_END") &
+//    VB("VDP_START") & VE("VDP_STOP") &
+//    S("TASK_STARVATION") &
+//    CB < CE & VE < VE &
+//    (
+//      (CB < VB & VB < CE & CE < VE & VB < S & S < CE) |
+//      (VB < CB & CB < VE & VE < CE & CB < S & S < VE) |
+//      (CB < VB & VE < CE           & VB < S & S < VE) |
+//      (VB < CB & CE < VE           & CB < S & S < CE)
+//    ) &
+//    !EXISTS X . (same(X,CB) | same(X,CE)) & CB < X & X < CE &
+//    !EXISTS X . (same(X,VB) | same(X,VE)) & VB < X & X < VE
+
+IVAL :- BEGIN before END
+  where BEGIN.interval = END.interval
+  map {interval -> BEGIN.interval, data -> BEGIN.data}
+
+COMM :- i1:IVAL before i2:IVAL
+  where i1.data = "COMM_BEGIN" & i2.data = "COMM_END"
+
+VDP :- i1:IVAL before i2:IVAL
+  where i1.data = "VDP_START" & i2.data = "VDP_STOP"
+
+STARVATION :- IVAL where IVAL.data = "TASK_STARVATION"
+
+OK_STARVATION :- STARVATION during (VDP slice COMM)
+

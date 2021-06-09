@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#
+# nfer - a tool for creating intervals from an event stream.
+#
+# To use, call (after making executable with: chmod +x nfer) as follows:
+#
+#   nfer <specFile> <traceFile> true|false true|false 
+#
+# First true or false  : minimality or not
+# Second true or false : print out resulting intervals or not
+
+NFERDIR=$(cd `dirname $0` && pwd)
+
+scala -J-Xmx10g -cp $NFERDIR/nfer.jar nfer.Main "$@"

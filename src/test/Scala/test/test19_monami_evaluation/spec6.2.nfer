@@ -1,0 +1,29 @@
+// ==================
+// Specification 6.2:
+// ------------------
+
+/* MonAmi:
+!exist B1, B2, D .
+  same(B1,B2) &
+  !same(B1,D) &
+  D("DOWNLINK") &
+  B1 < B2 &
+  (
+     B1 i D
+   | B2 i D
+   | (B1 < D & D < B2)
+   | (B1 o D & !D i B2)
+   | (D o B2 & !D i B1)
+  )
+*/
+
+IVAL :- BEGIN before END
+  where BEGIN.interval = END.interval
+  map {interval -> BEGIN.interval, data -> BEGIN.data}
+
+DOWNLINK :- IVAL where IVAL.data = "DOWNLINK"
+SAME :- i1:IVAL before i2:IVAL
+  where i1.data = i2.data & i1.data != "DOWNLINK"
+FOUND :- DOWNLINK during SAME
+
+

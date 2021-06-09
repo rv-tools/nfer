@@ -1,0 +1,33 @@
+
+// ==================
+// Specification 7.2:
+// ------------------
+
+// MonAmi 2:
+//  exists D, C, T .
+//    (
+//      (D("DIS_MOB_PRM") &  C("COM_MOB_PRM"))
+//        |
+//      (D("DIS_ARM_PRM") &  C("COM_ARM_PRM"))
+//    ) &
+//    T("TLM_TR_ERROR") &
+//    D < C &
+//    !EXISTS X . (same(X,D) | same(X,C)) & D < X & X < C) &
+//    !(T < D) &
+//    !(C < T) &
+//    !(T o D) &
+//    !(C o T) &
+
+// nfer 2:
+
+IVAL :- BEGIN before END
+  where BEGIN.interval = END.interval
+  map {interval -> BEGIN.interval, data -> BEGIN.data}
+
+EXEC :- i1:IVAL before i2:IVAL
+  where (i1.data = "DIS_MOB_PRM" & i2.data = "COM_MOB_PRM") |
+        (i1.data = "DIS_ARM_PRM" & i2.data = "COM_ARM_PRM")
+
+ERROR :- IVAL where IVAL.data = "TLM_TR_ERROR"
+
+RACE :- ERROR during EXEC

@@ -1,0 +1,37 @@
+// ==================
+// Specification 6.1:
+// ------------------
+
+/*
+One particular concern in this case is whether there is a downlink
+operation during an interval where the flight computer
+reboots twice. This scenario could cause a potential loss of downlink
+information.
+*/
+
+/* MonAmi:
+!exist B1, B2, D .
+  B1("BOOT) &
+  B2("BOOT") &
+  D("DL_IMAGE") &
+  B1 < B2 &
+  (
+     B1 i D
+   | B2 i D
+   | (B1 < D & D < B2)
+   | (B1 o D & !D i B2)
+   | (D o B2 & !D i B1)
+  )
+*/
+
+// Interpreted without minimality.
+
+IVAL :- BEGIN before END
+  where BEGIN.interval = END.interval
+  map {interval -> BEGIN.interval, data -> BEGIN.data}
+
+BOOT :- IVAL where IVAL.data = "BOOT"
+DL:- IVAL where IVAL.data = "DL_IMAGE"
+DBOOT :- BOOT before BOOT
+FOUND :- DL during DBOOT
+

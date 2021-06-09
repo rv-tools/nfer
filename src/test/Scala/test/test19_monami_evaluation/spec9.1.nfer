@@ -1,0 +1,28 @@
+
+// ===================
+// Specification  9.1:
+// -------------------
+
+/*
+This property labels a situation in which a warning about task starvation (STARVE)
+is expected whenever an activity (GET_CAMDATA) which fetches data
+products from the cameras overlaps with an Earth image communication activity (TR_IMAGE).
+*/
+
+/* MonAmi:
+!exist C, V, S .
+  D("DL_IMAGE") & G("GET_CAMDATA") & S("STARVE") &
+  D i S & G i S
+*/
+
+// Interpreted without minimality.
+
+IVAL :- BEGIN before END
+  where BEGIN.interval = END.interval
+  map {interval -> BEGIN.interval, data -> BEGIN.data}
+
+DL :- IVAL where IVAL.data = "DL_IMAGE"
+GET :- IVAL where IVAL.data = "GET_CAMDATA"
+STARVE :- IVAL where IVAL.data = "STARVE"
+FOUND :- STARVE during (GET slice DL)
+

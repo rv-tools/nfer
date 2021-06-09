@@ -1,0 +1,14 @@
+
+nfer consists of the following packages:
+
+ast:
+  - abstract syntax (including printing: toString)
+  - lexer and parser
+
+network:
+  - the rete-like network an ast is translated to
+  - translator from ast to network.
+
+agents:
+  - the top level binding parsing and network production together.
+

@@ -1,0 +1,27 @@
+
+// ==================
+// Specification 7.1:
+// ------------------
+
+/*
+Detect a telemetry downlink error (DL_ERROR) during the
+execution of either transmission of mobility parameters
+(DL_MOBPRM) or transmission of robotic arm parameters (DL_ARMPRM). Such are harmless.
+*/
+
+/* MonAmi:
+!exist C, T .
+  (D("DL_MOBPRM") | D("DL_ARMPRM")) &
+  F("DL_FAIL") &
+  D i F
+*/
+
+// Interpreted without minimality.
+
+IVAL :- BEGIN before END
+  where BEGIN.interval = END.interval
+  map {interval -> BEGIN.interval, data -> BEGIN.data}
+
+DL :- IVAL where IVAL.data = "DL_MOBPRM" | IVAL.data = "DL_ARMPRM"
+FAIL :- IVAL where IVAL.data = "DL_FAIL"
+FOUND :- FAIL during DL

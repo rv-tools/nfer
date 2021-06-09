@@ -1,0 +1,10 @@
+// ================
+// Specification 3:
+// ----------------
+
+// MonAmi:
+// forall A, B . ((!exist C .(A < C & C < B) -> !(A(2) & B(2))
+// ???
+
+// *** Cannot be specified in Scala version of nfer since it does not have the unless construct.
+

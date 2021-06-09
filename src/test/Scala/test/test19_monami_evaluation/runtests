@@ -1,0 +1,37 @@
+#!/bin/bash
+
+echo "=== RESULT ===" > RESULT
+
+echo "########## spec 6.1 ##########" >> RESULT
+
+(gtime nfer spec6.1.nfer trace_1000.json false false) >> RESULT 2>&1
+(gtime nfer spec6.1.nfer trace_2000.json false false) >> RESULT 2>&1
+(gtime nfer spec6.1.nfer trace_4000.json false false) >> RESULT 2>&1
+(gtime nfer spec6.1.nfer trace_8000.json false false) >> RESULT 2>&1 
+(gtime nfer spec6.1.nfer trace_16000.json false false) >> RESULT 2>&1
+
+
+echo "########## spec 7.1 ##########" >> RESULT
+
+(gtime nfer spec7.1.nfer trace_1000.json false false) >> RESULT 2>&1
+(gtime nfer spec7.1.nfer trace_2000.json false false) >> RESULT 2>&1
+(gtime nfer spec7.1.nfer trace_4000.json false false) >> RESULT 2>&1
+(gtime nfer spec7.1.nfer trace_8000.json false false) >> RESULT 2>&1
+(gtime nfer spec7.1.nfer trace_16000.json false false) >> RESULT 2>&1
+
+echo "########## spec 8 ########## - minimality" >> RESULT
+
+(gtime nfer spec8.nfer trace_1000.json true false) >> RESULT 2>&1
+(gtime nfer spec8.nfer trace_2000.json true false) >> RESULT 2>&1
+(gtime nfer spec8.nfer trace_4000.json true false) >> RESULT 2>&1
+(gtime nfer spec8.nfer trace_8000.json true false) >> RESULT 2>&1
+(gtime nfer spec8.nfer trace_16000.json true false) >> RESULT 2>&1
+
+echo "########## spec 9.1 ##########" >> RESULT
+
+(gtime nfer spec9.1.nfer trace_1000.json false false) >> RESULT 2>&1
+(gtime nfer spec9.1.nfer trace_2000.json false false) >> RESULT 2>&1
+(gtime nfer spec9.1.nfer trace_4000.json false false) >> RESULT 2>&1
+(gtime nfer spec9.1.nfer trace_8000.json false false) >> RESULT 2>&1
+(gtime nfer spec9.1.nfer trace_16000.json false false) >> RESULT 2>&1
+

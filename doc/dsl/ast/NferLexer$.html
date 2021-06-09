@@ -1,0 +1,1819 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>NferLexer - nfer documentation - nfer.ast.NferLexer</title>
+          <meta name="description" content="NferLexer - nfer documentation - nfer.ast.NferLexer" />
+          <meta name="keywords" content="NferLexer nfer documentation nfer.ast.NferLexer" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+          if(top === self) {
+          var url = '../../index.html';
+          var hash = 'nfer.ast.NferLexer$';
+          var anchor = window.location.hash;
+          var anchor_opt = '';
+          if (anchor.length >= 1)
+          anchor_opt = '@' + anchor.substring(1);
+          window.location.href = url + '#' + hash + anchor_opt;
+          }
+      </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../lib/object_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="dsl">dsl</a>.<a href="package.html" class="extype" name="nfer.ast">ast</a></p>
+        <h1>NferLexer</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">NferLexer</span><span class="result"> extends <span class="extype" name="scala.util.parsing.combinator.RegexParsers">RegexParsers</span></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.util.parsing.combinator.RegexParsers">RegexParsers</span>, <span class="extype" name="scala.util.parsing.combinator.Parsers">Parsers</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="nfer.ast.NferLexer"><span>NferLexer</span></li><li class="in" name="scala.util.parsing.combinator.RegexParsers"><span>RegexParsers</span></li><li class="in" name="scala.util.parsing.combinator.Parsers"><span>Parsers</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.util.parsing.combinator.RegexParsers.Elem" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Elem=Char"></a>
+      <a id="Elem:Elem"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Elem</span><span class="result"> = <span class="extype" name="scala.Char">Char</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RegexParsers → Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers.Error" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ErrorextendsParsers.this.NoSuccesswithProductwithSerializable"></a>
+      <a id="Error:Error"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Error</span><span class="result"> extends <span class="extype" name="scala.util.parsing.combinator.Parsers.NoSuccess">NoSuccess</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers.Failure" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="FailureextendsParsers.this.NoSuccesswithProductwithSerializable"></a>
+      <a id="Failure:Failure"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Failure</span><span class="result"> extends <span class="extype" name="scala.util.parsing.combinator.Parsers.NoSuccess">NoSuccess</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers.Input" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Input=scala.util.parsing.input.Reader[Parsers.this.Elem]"></a>
+      <a id="Input:Input"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Input</span><span class="result"> = <span class="extype" name="scala.util.parsing.input.Reader">Reader</span>[<a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers.NoSuccess" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="NoSuccessextendsParsers.this.ParseResult[Nothing]"></a>
+      <a id="NoSuccess:NoSuccess"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">NoSuccess</span><span class="result"> extends <span class="extype" name="scala.util.parsing.combinator.Parsers.ParseResult">ParseResult</span>[<span class="extype" name="scala.Nothing">Nothing</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers.OnceParser" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="OnceParser[+T]extendsParsers.this.Parser[T]"></a>
+      <a id="OnceParser[+T]:OnceParser[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">OnceParser</span><span class="tparams">[<span name="T">+T</span>]</span><span class="result"> extends <span class="extype" name="scala.util.parsing.combinator.Parsers.Parser">Parser</span>[<span class="extype" name="scala.util.parsing.combinator.Parsers.OnceParser.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers.ParseResult" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ParseResult[+T]extendsAnyRef"></a>
+      <a id="ParseResult[+T]:ParseResult[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ParseResult</span><span class="tparams">[<span name="T">+T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers.Parser" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]"></a>
+      <a id="Parser[+T]:Parser[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Parser</span><span class="tparams">[<span name="T">+T</span>]</span><span class="result"> extends (<span class="extype" name="scala.util.parsing.combinator.Parsers.Input">Input</span>) ⇒ <span class="extype" name="scala.util.parsing.combinator.Parsers.ParseResult">ParseResult</span>[<span class="extype" name="scala.util.parsing.combinator.Parsers.Parser.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers.Success" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Success[+T]extendsParsers.this.ParseResult[T]withProductwithSerializable"></a>
+      <a id="Success[+T]:Success[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Success</span><span class="tparams">[<span name="T">+T</span>]</span><span class="result"> extends <span class="extype" name="scala.util.parsing.combinator.Parsers.ParseResult">ParseResult</span>[<span class="extype" name="scala.util.parsing.combinator.Parsers.Success.T">T</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers.~" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="~[+a,+b]extendsProductwithSerializable"></a>
+      <a id="~[+a,+b]:~[a,b]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $tilde" class="name">~</span><span class="tparams">[<span name="a">+a</span>, <span name="b">+b</span>]</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:AnyRef):Boolean"></a>
+      <a id="!=(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:AnyRef):Boolean"></a>
+      <a id="==(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers.NoSuccess" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="NoSuccess"></a>
+      <a id="NoSuccess:NoSuccess"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">NoSuccess</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#OnceParser" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="OnceParser[T](f:Parsers.this.Input=&gt;Parsers.this.ParseResult[T]):Parsers.this.Parser[T]withParsers.this.OnceParser[T]"></a>
+      <a id="OnceParser[T]((Input)⇒ParseResult[T]):Parser[T]withOnceParser[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">OnceParser</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="f">f: (<a href="#Input=scala.util.parsing.input.Reader[Parsers.this.Elem]" class="extmbr" name="nfer.ast.NferLexer.Input">Input</a>) ⇒ <a href="#ParseResult[+T]extendsAnyRef" class="extmbr" name="nfer.ast.NferLexer.ParseResult">ParseResult</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.OnceParser.T">T</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.OnceParser.T">T</span>] with <a href="#OnceParser[+T]extendsParsers.this.Parser[T]" class="extmbr" name="nfer.ast.NferLexer.OnceParser">OnceParser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.OnceParser.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#Parser" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Parser[T](f:Parsers.this.Input=&gt;Parsers.this.ParseResult[T]):Parsers.this.Parser[T]"></a>
+      <a id="Parser[T]((Input)⇒ParseResult[T]):Parser[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Parser</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="f">f: (<a href="#Input=scala.util.parsing.input.Reader[Parsers.this.Elem]" class="extmbr" name="nfer.ast.NferLexer.Input">Input</a>) ⇒ <a href="#ParseResult[+T]extendsAnyRef" class="extmbr" name="nfer.ast.NferLexer.ParseResult">ParseResult</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.Parser.T">T</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.Parser.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#accept" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="accept[U](expected:String,f:PartialFunction[Parsers.this.Elem,U]):Parsers.this.Parser[U]"></a>
+      <a id="accept[U](String,PartialFunction[Elem,U]):Parser[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">accept</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="expected">expected: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="f">f: <span class="extype" name="scala.PartialFunction">PartialFunction</span>[<a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a>, <span class="extype" name="scala.util.parsing.combinator.Parsers.accept.U">U</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.accept.U">U</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#accept" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="accept[ES](es:ES)(implicitevidence$1:ES=&gt;List[Parsers.this.Elem]):Parsers.this.Parser[List[Parsers.this.Elem]]"></a>
+      <a id="accept[ES](ES)((ES)⇒List[Elem]):Parser[List[Elem]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">accept</span><span class="tparams">[<span name="ES">ES</span>]</span><span class="params">(<span name="es">es: <span class="extype" name="scala.util.parsing.combinator.Parsers.accept.ES">ES</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="scala.util.parsing.combinator.Parsers.accept.ES">ES</span>) ⇒ <span class="extype" name="scala.List">List</span>[<a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.List">List</span>[<a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a>]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#accept" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="accept(e:Parsers.this.Elem):Parsers.this.Parser[Parsers.this.Elem]"></a>
+      <a id="accept(Elem):Parser[Elem]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">accept</span><span class="params">(<span name="e">e: <a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a></span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#acceptIf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="acceptIf(p:Parsers.this.Elem=&gt;Boolean)(err:Parsers.this.Elem=&gt;String):Parsers.this.Parser[Parsers.this.Elem]"></a>
+      <a id="acceptIf((Elem)⇒Boolean)((Elem)⇒String):Parser[Elem]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">acceptIf</span><span class="params">(<span name="p">p: (<a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="params">(<span name="err">err: (<a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a>) ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#acceptMatch" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="acceptMatch[U](expected:String,f:PartialFunction[Parsers.this.Elem,U]):Parsers.this.Parser[U]"></a>
+      <a id="acceptMatch[U](String,PartialFunction[Elem,U]):Parser[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">acceptMatch</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="expected">expected: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="f">f: <span class="extype" name="scala.PartialFunction">PartialFunction</span>[<a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a>, <span class="extype" name="scala.util.parsing.combinator.Parsers.acceptMatch.U">U</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.acceptMatch.U">U</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#acceptSeq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="acceptSeq[ES](es:ES)(implicitevidence$2:ES=&gt;Iterable[Parsers.this.Elem]):Parsers.this.Parser[List[Parsers.this.Elem]]"></a>
+      <a id="acceptSeq[ES](ES)((ES)⇒Iterable[Elem]):Parser[List[Elem]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">acceptSeq</span><span class="tparams">[<span name="ES">ES</span>]</span><span class="params">(<span name="es">es: <span class="extype" name="scala.util.parsing.combinator.Parsers.acceptSeq.ES">ES</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="scala.util.parsing.combinator.Parsers.acceptSeq.ES">ES</span>) ⇒ <span class="extype" name="scala.Iterable">Iterable</span>[<a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.List">List</span>[<a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a>]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#also" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="also:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.ALSO.type]"></a>
+      <a id="also:Parser[ALSO.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">also</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$ALSO$.html" class="extype" name="nfer.ast.NferTokenNamespace.ALSO">ALSO</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#and" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="and:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.AND.type]"></a>
+      <a id="and:Parser[AND.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">and</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$AND$.html" class="extype" name="nfer.ast.NferTokenNamespace.AND">AND</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(code:String):List[nfer.ast.NferTokenNamespace.NferToken]"></a>
+      <a id="apply(String):List[NferToken]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="code">code: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.List">List</span>[<a href="NferTokenNamespace$$NferToken.html" class="extype" name="nfer.ast.NferTokenNamespace.NferToken">NferToken</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#bang" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="bang:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.BANG.type]"></a>
+      <a id="bang:Parser[BANG.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">bang</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$BANG$.html" class="extype" name="nfer.ast.NferTokenNamespace.BANG">BANG</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#before" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="before:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.BEFORE.type]"></a>
+      <a id="before:Parser[BEFORE.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">before</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$BEFORE$.html" class="extype" name="nfer.ast.NferTokenNamespace.BEFORE">BEFORE</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#begin" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="begin:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.BEGIN.type]"></a>
+      <a id="begin:Parser[BEGIN.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">begin</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$BEGIN$.html" class="extype" name="nfer.ast.NferTokenNamespace.BEGIN">BEGIN</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#call" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="call:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.CALL.type]"></a>
+      <a id="call:Parser[CALL.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">call</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$CALL$.html" class="extype" name="nfer.ast.NferTokenNamespace.CALL">CALL</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.util.parsing.combinator.Parsers#chainl1" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="chainl1[T,U](first:=&gt;Parsers.this.Parser[T],p:=&gt;Parsers.this.Parser[U],q:=&gt;Parsers.this.Parser[(T,U)=&gt;T]):Parsers.this.Parser[T]"></a>
+      <a id="chainl1[T,U](⇒Parser[T],⇒Parser[U],⇒Parser[(T,U)⇒T]):Parser[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">chainl1</span><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="first">first: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.chainl1.T">T</span>]</span>, <span name="p">p: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.chainl1.U">U</span>]</span>, <span name="q">q: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[(<span class="extype" name="scala.util.parsing.combinator.Parsers.chainl1.T">T</span>, <span class="extype" name="scala.util.parsing.combinator.Parsers.chainl1.U">U</span>) ⇒ <span class="extype" name="scala.util.parsing.combinator.Parsers.chainl1.T">T</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.chainl1.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#chainl1" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="chainl1[T](p:=&gt;Parsers.this.Parser[T],q:=&gt;Parsers.this.Parser[(T,T)=&gt;T]):Parsers.this.Parser[T]"></a>
+      <a id="chainl1[T](⇒Parser[T],⇒Parser[(T,T)⇒T]):Parser[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">chainl1</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.chainl1.T">T</span>]</span>, <span name="q">q: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[(<span class="extype" name="scala.util.parsing.combinator.Parsers.chainl1.T">T</span>, <span class="extype" name="scala.util.parsing.combinator.Parsers.chainl1.T">T</span>) ⇒ <span class="extype" name="scala.util.parsing.combinator.Parsers.chainl1.T">T</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.chainl1.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#chainr1" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="chainr1[T,U](p:=&gt;Parsers.this.Parser[T],q:=&gt;Parsers.this.Parser[(T,U)=&gt;U],combine:(T,U)=&gt;U,first:U):Parsers.this.Parser[U]"></a>
+      <a id="chainr1[T,U](⇒Parser[T],⇒Parser[(T,U)⇒U],(T,U)⇒U,U):Parser[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">chainr1</span><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="p">p: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.chainr1.T">T</span>]</span>, <span name="q">q: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[(<span class="extype" name="scala.util.parsing.combinator.Parsers.chainr1.T">T</span>, <span class="extype" name="scala.util.parsing.combinator.Parsers.chainr1.U">U</span>) ⇒ <span class="extype" name="scala.util.parsing.combinator.Parsers.chainr1.U">U</span>]</span>, <span name="combine">combine: (<span class="extype" name="scala.util.parsing.combinator.Parsers.chainr1.T">T</span>, <span class="extype" name="scala.util.parsing.combinator.Parsers.chainr1.U">U</span>) ⇒ <span class="extype" name="scala.util.parsing.combinator.Parsers.chainr1.U">U</span></span>, <span name="first">first: <span class="extype" name="scala.util.parsing.combinator.Parsers.chainr1.U">U</span></span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.chainr1.U">U</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#coincide" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="coincide:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.COINCIDE.type]"></a>
+      <a id="coincide:Parser[COINCIDE.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">coincide</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$COINCIDE$.html" class="extype" name="nfer.ast.NferTokenNamespace.COINCIDE">COINCIDE</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#colon" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="colon:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.COLON.type]"></a>
+      <a id="colon:Parser[COLON.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">colon</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$COLON$.html" class="extype" name="nfer.ast.NferTokenNamespace.COLON">COLON</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#comma" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="comma:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.COMMA.type]"></a>
+      <a id="comma:Parser[COMMA.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">comma</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$COMMA$.html" class="extype" name="nfer.ast.NferTokenNamespace.COMMA">COMMA</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.util.parsing.combinator.Parsers#commit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="commit[T](p:=&gt;Parsers.this.Parser[T]):Parsers.this.Parser[T]"></a>
+      <a id="commit[T](⇒Parser[T]):Parser[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">commit</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.commit.T">T</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.commit.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#div" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="div:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.DIV.type]"></a>
+      <a id="div:Parser[DIV.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">div</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$DIV$.html" class="extype" name="nfer.ast.NferTokenNamespace.DIV">DIV</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#dot" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="dot:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.DOT.type]"></a>
+      <a id="dot:Parser[DOT.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">dot</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$DOT$.html" class="extype" name="nfer.ast.NferTokenNamespace.DOT">DOT</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#doubleLiteral" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="doubleLiteral:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.DOUBLELITERAL]"></a>
+      <a id="doubleLiteral:Parser[DOUBLELITERAL]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">doubleLiteral</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$DOUBLELITERAL.html" class="extype" name="nfer.ast.NferTokenNamespace.DOUBLELITERAL">DOUBLELITERAL</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#during" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="during:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.DURING.type]"></a>
+      <a id="during:Parser[DURING.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">during</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$DURING$.html" class="extype" name="nfer.ast.NferTokenNamespace.DURING">DURING</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.util.parsing.combinator.Parsers#elem" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="elem(e:Parsers.this.Elem):Parsers.this.Parser[Parsers.this.Elem]"></a>
+      <a id="elem(Elem):Parser[Elem]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">elem</span><span class="params">(<span name="e">e: <a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a></span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#elem" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="elem(kind:String,p:Parsers.this.Elem=&gt;Boolean):Parsers.this.Parser[Parsers.this.Elem]"></a>
+      <a id="elem(String,(Elem)⇒Boolean):Parser[Elem]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">elem</span><span class="params">(<span name="kind">kind: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p">p: (<a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="#Elem=Char" class="extmbr" name="nfer.ast.NferLexer.Elem">Elem</a>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#end" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="end:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.END.type]"></a>
+      <a id="end:Parser[END.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">end</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$END$.html" class="extype" name="nfer.ast.NferTokenNamespace.END">END</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#eq" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="eq:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.EQ.type]"></a>
+      <a id="eq:Parser[EQ.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$EQ$.html" class="extype" name="nfer.ast.NferTokenNamespace.EQ">EQ</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#err" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="err(msg:String):Parsers.this.Parser[Nothing]"></a>
+      <a id="err(String):Parser[Nothing]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">err</span><span class="params">(<span name="msg">msg: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.Nothing">Nothing</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#failure" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="failure(msg:String):Parsers.this.Parser[Nothing]"></a>
+      <a id="failure(String):Parser[Nothing]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">failure</span><span class="params">(<span name="msg">msg: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.Nothing">Nothing</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#false_" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="false_:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.FALSE.type]"></a>
+      <a id="false_:Parser[FALSE.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">false_</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$FALSE$.html" class="extype" name="nfer.ast.NferTokenNamespace.FALSE">FALSE</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#finish" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="finish:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.FINISH.type]"></a>
+      <a id="finish:Parser[FINISH.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finish</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$FINISH$.html" class="extype" name="nfer.ast.NferTokenNamespace.FINISH">FINISH</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#floatingPoint" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="floatingPoint:scala.util.matching.Regex"></a>
+      <a id="floatingPoint:Regex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">floatingPoint</span><span class="result">: <span class="extype" name="scala.util.matching.Regex">Regex</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#ge" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ge:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.GE.type]"></a>
+      <a id="ge:Parser[GE.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ge</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$GE$.html" class="extype" name="nfer.ast.NferTokenNamespace.GE">GE</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#gt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="gt:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.GT.type]"></a>
+      <a id="gt:Parser[GT.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">gt</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$GT$.html" class="extype" name="nfer.ast.NferTokenNamespace.GT">GT</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.util.parsing.combinator.Parsers#guard" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="guard[T](p:=&gt;Parsers.this.Parser[T]):Parsers.this.Parser[T]"></a>
+      <a id="guard[T](⇒Parser[T]):Parser[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">guard</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.guard.T">T</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.guard.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.RegexParsers#handleWhiteSpace" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="handleWhiteSpace(source:&lt;?&gt;,offset:&lt;?&gt;):Int"></a>
+      <a id="handleWhiteSpace(CharSequence,Int):Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">handleWhiteSpace</span><span class="params">(<span name="source">source: <span class="extype" name="java.lang.CharSequence">CharSequence</span></span>, <span name="offset">offset: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>RegexParsers</dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#identifier" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="identifier:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.IDENTIFIER]"></a>
+      <a id="identifier:Parser[IDENTIFIER]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">identifier</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$IDENTIFIER.html" class="extype" name="nfer.ast.NferTokenNamespace.IDENTIFIER">IDENTIFIER</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#import_" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="import_:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.IMPORT.type]"></a>
+      <a id="import_:Parser[IMPORT.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">import_</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$IMPORT$.html" class="extype" name="nfer.ast.NferTokenNamespace.IMPORT">IMPORT</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#intLiteral" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="intLiteral:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.INTLITERAL]"></a>
+      <a id="intLiteral:Parser[INTLITERAL]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">intLiteral</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$INTLITERAL.html" class="extype" name="nfer.ast.NferTokenNamespace.INTLITERAL">INTLITERAL</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#lbrace" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="lbrace:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.LBRACE.type]"></a>
+      <a id="lbrace:Parser[LBRACE.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">lbrace</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$LBRACE$.html" class="extype" name="nfer.ast.NferTokenNamespace.LBRACE">LBRACE</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#le" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="le:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.LE.type]"></a>
+      <a id="le:Parser[LE.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">le</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$LE$.html" class="extype" name="nfer.ast.NferTokenNamespace.LE">LE</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.util.parsing.combinator.RegexParsers#literal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="literal(s:String):RegexParsers.this.Parser[String]"></a>
+      <a id="literal(String):Parser[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">literal</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RegexParsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#log" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="log[T](p:=&gt;Parsers.this.Parser[T])(name:String):Parsers.this.Parser[T]"></a>
+      <a id="log[T](⇒Parser[T])(String):Parser[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">log</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.log.T">T</span>]</span>)</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.log.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#lparen" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="lparen:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.LPAREN.type]"></a>
+      <a id="lparen:Parser[LPAREN.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">lparen</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$LPAREN$.html" class="extype" name="nfer.ast.NferTokenNamespace.LPAREN">LPAREN</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#lt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="lt:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.LT.type]"></a>
+      <a id="lt:Parser[LT.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">lt</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$LT$.html" class="extype" name="nfer.ast.NferTokenNamespace.LT">LT</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#map" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="map:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.MAP.type]"></a>
+      <a id="map:Parser[MAP.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">map</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$MAP$.html" class="extype" name="nfer.ast.NferTokenNamespace.MAP">MAP</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#mapsto" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="mapsto:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.MAPSTO.type]"></a>
+      <a id="mapsto:Parser[MAPSTO.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mapsto</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$MAPSTO$.html" class="extype" name="nfer.ast.NferTokenNamespace.MAPSTO">MAPSTO</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#meet" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="meet:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.MEET.type]"></a>
+      <a id="meet:Parser[MEET.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">meet</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$MEET$.html" class="extype" name="nfer.ast.NferTokenNamespace.MEET">MEET</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#minus" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="minus:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.MINUS.type]"></a>
+      <a id="minus:Parser[MINUS.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">minus</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$MINUS$.html" class="extype" name="nfer.ast.NferTokenNamespace.MINUS">MINUS</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.util.parsing.combinator.Parsers#mkList" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mkList[T]:Parsers.this.~[T,List[T]]=&gt;List[T]"></a>
+      <a id="mkList[T]:(~[T,List[T]])⇒List[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mkList</span><span class="tparams">[<span name="T">T</span>]</span><span class="result">: (<a href="#~[+a,+b]extendsProductwithSerializable" class="extmbr" name="nfer.ast.NferLexer.~">~</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.mkList.T">T</span>, <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.util.parsing.combinator.Parsers.mkList.T">T</span>]]) ⇒ <span class="extype" name="scala.collection.immutable.List">List</span>[<span class="extype" name="scala.util.parsing.combinator.Parsers.mkList.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#mod" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="mod:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.MOD.type]"></a>
+      <a id="mod:Parser[MOD.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mod</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$MOD$.html" class="extype" name="nfer.ast.NferTokenNamespace.MOD">MOD</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#module" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="module:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.MODULE.type]"></a>
+      <a id="module:Parser[MODULE.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">module</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$MODULE$.html" class="extype" name="nfer.ast.NferTokenNamespace.MODULE">MODULE</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#mul" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="mul:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.MUL.type]"></a>
+      <a id="mul:Parser[MUL.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mul</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$MUL$.html" class="extype" name="nfer.ast.NferTokenNamespace.MUL">MUL</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#ne" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ne:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.NE.type]"></a>
+      <a id="ne:Parser[NE.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$NE$.html" class="extype" name="nfer.ast.NferTokenNamespace.NE">NE</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#not" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="not[T](p:=&gt;Parsers.this.Parser[T]):Parsers.this.Parser[Unit]"></a>
+      <a id="not[T](⇒Parser[T]):Parser[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">not</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.not.T">T</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.Unit">Unit</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#opt" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="opt[T](p:=&gt;Parsers.this.Parser[T]):Parsers.this.Parser[Option[T]]"></a>
+      <a id="opt[T](⇒Parser[T]):Parser[Option[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">opt</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.opt.T">T</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.util.parsing.combinator.Parsers.opt.T">T</span>]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#or" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="or:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.OR.type]"></a>
+      <a id="or:Parser[OR.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">or</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$OR$.html" class="extype" name="nfer.ast.NferTokenNamespace.OR">OR</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#overlap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="overlap:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.OVERLAP.type]"></a>
+      <a id="overlap:Parser[OVERLAP.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">overlap</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$OVERLAP$.html" class="extype" name="nfer.ast.NferTokenNamespace.OVERLAP">OVERLAP</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.util.parsing.combinator.RegexParsers#parse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="parse[T&lt;:&lt;?&gt;](p:&lt;?&gt;,in:&lt;?&gt;):RegexParsers.this.ParseResult[T]"></a>
+      <a id="parse[T](Parser[T],Reader):ParseResult[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parse</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.parse.T">T</span>]</span>, <span name="in">in: <span class="extype" name="java.io.Reader">Reader</span></span>)</span><span class="result">: <a href="#ParseResult[+T]extendsAnyRef" class="extmbr" name="nfer.ast.NferLexer.ParseResult">ParseResult</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.parse.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RegexParsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.RegexParsers#parse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="parse[T&lt;:&lt;?&gt;](p:&lt;?&gt;,in:&lt;?&gt;):RegexParsers.this.ParseResult[T]"></a>
+      <a id="parse[T](Parser[T],CharSequence):ParseResult[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parse</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.parse.T">T</span>]</span>, <span name="in">in: <span class="extype" name="java.lang.CharSequence">CharSequence</span></span>)</span><span class="result">: <a href="#ParseResult[+T]extendsAnyRef" class="extmbr" name="nfer.ast.NferLexer.ParseResult">ParseResult</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.parse.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RegexParsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.RegexParsers#parse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="parse[T&lt;:&lt;?&gt;](p:&lt;?&gt;,in:&lt;?&gt;):RegexParsers.this.ParseResult[T]"></a>
+      <a id="parse[T](Parser[T],Reader[Char]):ParseResult[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parse</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.parse.T">T</span>]</span>, <span name="in">in: <span class="extype" name="scala.util.parsing.input.Reader">Reader</span>[<span class="extype" name="scala.Char">Char</span>]</span>)</span><span class="result">: <a href="#ParseResult[+T]extendsAnyRef" class="extmbr" name="nfer.ast.NferLexer.ParseResult">ParseResult</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.parse.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RegexParsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.RegexParsers#parseAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="parseAll[T](p:RegexParsers.this.Parser[T],in:CharSequence):RegexParsers.this.ParseResult[T]"></a>
+      <a id="parseAll[T](Parser[T],CharSequence):ParseResult[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parseAll</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.parseAll.T">T</span>]</span>, <span name="in">in: <span class="extype" name="java.lang.CharSequence">CharSequence</span></span>)</span><span class="result">: <a href="#ParseResult[+T]extendsAnyRef" class="extmbr" name="nfer.ast.NferLexer.ParseResult">ParseResult</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.parseAll.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RegexParsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.RegexParsers#parseAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="parseAll[T](p:RegexParsers.this.Parser[T],in:java.io.Reader):RegexParsers.this.ParseResult[T]"></a>
+      <a id="parseAll[T](Parser[T],Reader):ParseResult[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parseAll</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.parseAll.T">T</span>]</span>, <span name="in">in: <span class="extype" name="java.io.Reader">Reader</span></span>)</span><span class="result">: <a href="#ParseResult[+T]extendsAnyRef" class="extmbr" name="nfer.ast.NferLexer.ParseResult">ParseResult</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.parseAll.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RegexParsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.RegexParsers#parseAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="parseAll[T](p:RegexParsers.this.Parser[T],in:scala.util.parsing.input.Reader[Char]):RegexParsers.this.ParseResult[T]"></a>
+      <a id="parseAll[T](Parser[T],Reader[Char]):ParseResult[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parseAll</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.parseAll.T">T</span>]</span>, <span name="in">in: <span class="extype" name="scala.util.parsing.input.Reader">Reader</span>[<span class="extype" name="scala.Char">Char</span>]</span>)</span><span class="result">: <a href="#ParseResult[+T]extendsAnyRef" class="extmbr" name="nfer.ast.NferLexer.ParseResult">ParseResult</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.parseAll.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RegexParsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.RegexParsers#phrase" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="phrase[T](p:RegexParsers.this.Parser[T]):RegexParsers.this.Parser[T]"></a>
+      <a id="phrase[T](Parser[T]):Parser[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">phrase</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.phrase.T">T</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.phrase.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RegexParsers → Parsers</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#plus" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="plus:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.PLUS.type]"></a>
+      <a id="plus:Parser[PLUS.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">plus</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$PLUS$.html" class="extype" name="nfer.ast.NferTokenNamespace.PLUS">PLUS</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.util.parsing.combinator.RegexParsers#positioned" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="positioned[T&lt;:scala.util.parsing.input.Positional](p:=&gt;RegexParsers.this.Parser[T]):RegexParsers.this.Parser[T]"></a>
+      <a id="positioned[T&lt;:Positional](⇒Parser[T]):Parser[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">positioned</span><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="scala.util.parsing.input.Positional">Positional</span></span>]</span><span class="params">(<span name="p">p: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.positioned.T">T</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.RegexParsers.positioned.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RegexParsers → Parsers</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#rbrace" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="rbrace:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.RBRACE.type]"></a>
+      <a id="rbrace:Parser[RBRACE.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rbrace</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$RBRACE$.html" class="extype" name="nfer.ast.NferTokenNamespace.RBRACE">RBRACE</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.util.parsing.combinator.RegexParsers#regex" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="regex(r:scala.util.matching.Regex):RegexParsers.this.Parser[String]"></a>
+      <a id="regex(Regex):Parser[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">regex</span><span class="params">(<span name="r">r: <span class="extype" name="scala.util.matching.Regex">Regex</span></span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RegexParsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#rep" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rep[T](p:=&gt;Parsers.this.Parser[T]):Parsers.this.Parser[List[T]]"></a>
+      <a id="rep[T](⇒Parser[T]):Parser[List[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rep</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.rep.T">T</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.util.parsing.combinator.Parsers.rep.T">T</span>]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#rep1" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rep1[T](first:=&gt;Parsers.this.Parser[T],p0:=&gt;Parsers.this.Parser[T]):Parsers.this.Parser[List[T]]"></a>
+      <a id="rep1[T](⇒Parser[T],⇒Parser[T]):Parser[List[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rep1</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="first">first: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.rep1.T">T</span>]</span>, <span name="p0">p0: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.rep1.T">T</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.util.parsing.combinator.Parsers.rep1.T">T</span>]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd><dt>Annotations</dt><dd>
+                <span class="name">@migration</span>
+              
+        </dd><dt>Migration</dt><dd class="cmt"><p><i>(Changed in version 2.9.0)</i> The <code>p0</code> call-by-name arguments is evaluated at most once per constructed Parser object, instead of on every need that arises during parsing.</p></dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#rep1" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rep1[T](p:=&gt;Parsers.this.Parser[T]):Parsers.this.Parser[List[T]]"></a>
+      <a id="rep1[T](⇒Parser[T]):Parser[List[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rep1</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.rep1.T">T</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.util.parsing.combinator.Parsers.rep1.T">T</span>]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#rep1sep" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rep1sep[T](p:=&gt;Parsers.this.Parser[T],q:=&gt;Parsers.this.Parser[Any]):Parsers.this.Parser[List[T]]"></a>
+      <a id="rep1sep[T](⇒Parser[T],⇒Parser[Any]):Parser[List[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rep1sep</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.rep1sep.T">T</span>]</span>, <span name="q">q: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.util.parsing.combinator.Parsers.rep1sep.T">T</span>]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#repN" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="repN[T](num:Int,p:=&gt;Parsers.this.Parser[T]):Parsers.this.Parser[List[T]]"></a>
+      <a id="repN[T](Int,⇒Parser[T]):Parser[List[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">repN</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="num">num: <span class="extype" name="scala.Int">Int</span></span>, <span name="p">p: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.repN.T">T</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.util.parsing.combinator.Parsers.repN.T">T</span>]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#repsep" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="repsep[T](p:=&gt;Parsers.this.Parser[T],q:=&gt;Parsers.this.Parser[Any]):Parsers.this.Parser[List[T]]"></a>
+      <a id="repsep[T](⇒Parser[T],⇒Parser[Any]):Parser[List[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">repsep</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.repsep.T">T</span>]</span>, <span name="q">q: ⇒ <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.util.parsing.combinator.Parsers.repsep.T">T</span>]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#rparen" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="rparen:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.RPAREN.type]"></a>
+      <a id="rparen:Parser[RPAREN.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rparen</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$RPAREN$.html" class="extype" name="nfer.ast.NferTokenNamespace.RPAREN">RPAREN</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#semicolon" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="semicolon:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.SEMICOLON.type]"></a>
+      <a id="semicolon:Parser[SEMICOLON.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">semicolon</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$SEMICOLON$.html" class="extype" name="nfer.ast.NferTokenNamespace.SEMICOLON">SEMICOLON</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#skipWhitespace" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="skipWhitespace:Boolean"></a>
+      <a id="skipWhitespace:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">skipWhitespace</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="nfer.ast.NferLexer">NferLexer</a> → RegexParsers</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#slice" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="slice:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.SLICE.type]"></a>
+      <a id="slice:Parser[SLICE.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">slice</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$SLICE$.html" class="extype" name="nfer.ast.NferTokenNamespace.SLICE">SLICE</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#spec" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="spec:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.SPEC.type]"></a>
+      <a id="spec:Parser[SPEC.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">spec</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$SPEC$.html" class="extype" name="nfer.ast.NferTokenNamespace.SPEC">SPEC</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#start" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="start:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.START.type]"></a>
+      <a id="start:Parser[START.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">start</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$START$.html" class="extype" name="nfer.ast.NferTokenNamespace.START">START</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#string" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="string:scala.util.matching.Regex"></a>
+      <a id="string:Regex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">string</span><span class="result">: <span class="extype" name="scala.util.matching.Regex">Regex</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#stringLiteral" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="stringLiteral:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.STRINGLITERAL]"></a>
+      <a id="stringLiteral:Parser[STRINGLITERAL]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">stringLiteral</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$STRINGLITERAL.html" class="extype" name="nfer.ast.NferTokenNamespace.STRINGLITERAL">STRINGLITERAL</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.util.parsing.combinator.Parsers#success" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="success[T](v:T):Parsers.this.Parser[T]"></a>
+      <a id="success[T](T):Parser[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">success</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="v">v: <span class="extype" name="scala.util.parsing.combinator.Parsers.success.T">T</span></span>)</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.util.parsing.combinator.Parsers.success.T">T</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#tokens" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="tokens:nfer.ast.NferLexer.Parser[List[nfer.ast.NferTokenNamespace.NferToken]]"></a>
+      <a id="tokens:Parser[List[NferToken]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tokens</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<span class="extype" name="scala.List">List</span>[<a href="NferTokenNamespace$$NferToken.html" class="extype" name="nfer.ast.NferTokenNamespace.NferToken">NferToken</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#true_" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="true_:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.TRUE.type]"></a>
+      <a id="true_:Parser[TRUE.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">true_</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$TRUE$.html" class="extype" name="nfer.ast.NferTokenNamespace.TRUE">TRUE</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#when" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="when:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.WHEN.type]"></a>
+      <a id="when:Parser[WHEN.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">when</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$WHEN$.html" class="extype" name="nfer.ast.NferTokenNamespace.WHEN">WHEN</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#where" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="where:nfer.ast.NferLexer.Parser[nfer.ast.NferTokenNamespace.WHERE.type]"></a>
+      <a id="where:Parser[WHERE.type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">where</span><span class="result">: <a href="#Parser[+T]extendsParsers.this.Input=&gt;Parsers.this.ParseResult[T]" class="extmbr" name="nfer.ast.NferLexer.Parser">Parser</a>[<a href="NferTokenNamespace$$WHERE$.html" class="extype" name="nfer.ast.NferTokenNamespace.WHERE">WHERE</a>.type]</span>
+      </span>
+      </h4>
+      
+    </li><li name="nfer.ast.NferLexer#whiteSpace" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="whiteSpace:scala.util.matching.Regex"></a>
+      <a id="whiteSpace:Regex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">whiteSpace</span><span class="result">: <span class="extype" name="scala.util.matching.Regex">Regex</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="" class="extype" name="nfer.ast.NferLexer">NferLexer</a> → RegexParsers</dd></dl></div>
+    </li><li name="nfer.ast.NferLexer#wholeNumber" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="wholeNumber:scala.util.matching.Regex"></a>
+      <a id="wholeNumber:Regex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wholeNumber</span><span class="result">: <span class="extype" name="scala.util.matching.Regex">Regex</span></span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="scala.util.parsing.combinator.Parsers#lastNoSuccess" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lastNoSuccess:Parsers.this.NoSuccess"></a>
+      <a id="lastNoSuccess:NoSuccess"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.10.0) lastNoSuccess was not thread-safe and will be removed in 2.11.0">lastNoSuccess</span><span class="result">: <a href="#NoSuccessextendsParsers.this.ParseResult[Nothing]" class="extmbr" name="nfer.ast.NferLexer.NoSuccess">NoSuccess</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> lastNoSuccess was not thread-safe and will be removed in 2.11.0</p></dd></dl></div>
+    </li><li name="scala.util.parsing.combinator.Parsers#lastNoSuccess_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lastNoSuccess_=(x:Parsers.this.NoSuccess):Unit"></a>
+      <a id="lastNoSuccess_=(NoSuccess):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: lastNoSuccess_$eq. Deprecated: (Since version 2.10.0) lastNoSuccess was not thread-safe and will be removed in 2.11.0" class="name deprecated">lastNoSuccess_=</span><span class="params">(<span name="x">x: <a href="#NoSuccessextendsParsers.this.ParseResult[Nothing]" class="extmbr" name="nfer.ast.NferLexer.NoSuccess">NoSuccess</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> lastNoSuccess was not thread-safe and will be removed in 2.11.0</p></dd></dl></div>
+    </li></ol>
+            </div>
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.util.parsing.combinator.RegexParsers">
+              <h3>Inherited from <span class="extype" name="scala.util.parsing.combinator.RegexParsers">RegexParsers</span></h3>
+            </div><div class="parent" name="scala.util.parsing.combinator.Parsers">
+              <h3>Inherited from <span class="extype" name="scala.util.parsing.combinator.Parsers">Parsers</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../lib/template.js"></script>
+    </body>
+      </html>

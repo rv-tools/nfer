@@ -1,0 +1,26 @@
+// ================
+// Specification 5:
+// ----------------
+
+// MonAmi:
+//   exist A, B, C, D, E .
+//     A('Data1') & B('Data2') & C('Data3') &
+//     A < B & B < C &  & D i E
+// not satisfied, runs to the end.
+
+IVAL :- BEGIN before END
+  where BEGIN.interval = END.interval
+  map {interval -> BEGIN.interval, data -> BEGIN.data}
+
+ORDER :- i1:IVAL before i2:IVAL before i3:IVAL
+  where i1.data = "Data1" & i2.data = "Data2" & i3.data = "Data3"
+  // map {data1 -> i1.data, data2 -> i2.data, data3 -> i3.data}
+
+NESTED :- i1:IVAL during i2:IVAL
+  where i2.begin < i1.begin & i1.end < i2.end
+  // map {dataInner -> i1.data, dataOuter -> i2.data}
+
+//FOUND :- ORDER also NESTED
+  // map {data1 -> ORDER.data1, data2 -> ORDER.data2, data3 -> ORDER.data3,
+  //      dataInner -> NESTED.dataInner, dataOuter -> NESTED.dataOuter}
+

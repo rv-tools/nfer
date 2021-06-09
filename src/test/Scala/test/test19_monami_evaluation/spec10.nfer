@@ -1,0 +1,26 @@
+// =================
+// Specification 10:
+// -----------------
+
+// - Whenever a command (C) is issued to the spacecraft
+// - the command should be subsequently be initiated (I) on board
+//   with no drop (D) of the command before then
+// - then it should succeed (S)
+//   with no failure (F) before then
+// - and after that it should not succeed (S) again
+//
+// As a time line:
+//
+//  ?C     I     S
+//   |-----|-----|---->
+//     !D     !F    !S
+
+// MonAmi:
+// forall T1 .
+//     T1("C") ->
+//       exist T2, T3 .
+//         T1 < T2 & T2 < T3 &
+//         T2("I") & T3("S") &
+//         !exist U1 . T1 < U1 & U1 < T2 & U1("D") &
+//         !exist U2 . T2 < U2 & U2 < T3 & U2("F") &
+//         !exist U3 . T3 < U3 & U3("S")

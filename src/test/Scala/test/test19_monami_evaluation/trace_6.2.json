@@ -1,0 +1,24 @@
+{"execution": [ ["begin", 1, "BOOT1"],
+  ["end", 1],
+  ["begin", 2, "DOWNLINK"],
+  ["end", 2],
+  ["begin", 3, "Data3"],
+  ["end", 3],
+  ["begin", 4, "BOOT1"],
+  ["end", 4],
+  ["begin", 5, "BOOT2"],
+  ["end", 5],
+  ["begin", 6, "DOWNLINK"],
+  ["end", 6],
+  ["begin", 7, "BOOT3"],
+  ["end", 7],
+  ["begin", 8, "BOOT4"],
+  ["end", 8],
+  ["begin", 9, "DOWNLINK"],
+  ["end", 9],
+  ["begin", 10, "BOOT4"],
+  ["end", 10]
+]
+}
+
+

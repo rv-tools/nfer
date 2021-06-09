@@ -1,0 +1,15 @@
+// ================
+// Specification 2:
+// ----------------
+
+// MonAmi:
+// !exist A, B, C . A i B & B i C
+// violated, monitoring stops.
+
+IVAL :- BEGIN before END
+  where BEGIN.interval = END.interval
+  map {interval -> BEGIN.interval, data -> BEGIN.data}
+
+FOUND :- (C:IVAL during B:IVAL) during A:IVAL
+  where A.begin < B.begin & B.begin < C.begin &
+        C.end < B.end & B.end < A.end

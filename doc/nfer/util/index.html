@@ -1,0 +1,116 @@
+<!DOCTYPE html ><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/><title>nfer documentation  - nfer.util</title><meta content="nfer documentation - nfer.util" name="description"/><meta content="nfer documentation nfer.util" name="keywords"/><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet"/><link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet"/><link href="../../lib/print.css" media="print" type="text/css" rel="stylesheet"/><link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css"/><script type="text/javascript" src="../../lib/jquery.min.js"></script><script type="text/javascript" src="../../lib/index.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript" src="../../lib/scheduler.js"></script><script type="text/javascript" src="../../lib/template.js"></script><script type="text/javascript">/* this variable can be used by the JS to determine the path to the root document */
+var toRoot = '../../';</script></head><body><div id="search"><span id="doc-title">nfer documentation<span id="doc-version"></span></span> <span class="close-results"><span class="left">&lt;</span> Back</span><div id="textfilter"><span class="input"><input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/"/><i class="clear material-icons"></i><i id="search-icon" class="material-icons"></i></span></div></div><div id="search-results"><div id="search-progress"><div id="progress-fill"></div></div><div id="results-content"><div id="entity-results"></div><div id="member-results"></div></div></div><div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;"><div id="content-container" style="-webkit-overflow-scrolling: touch;"><div id="subpackage-spacer"><div id="packages"><h1>Packages</h1><ul><li class="indented0 " name="_root_.root" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="_root_" class="anchorToMember"></a><a id="root:_root_" class="anchorToMember"></a> <span class="permalink"><a href="../../index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../../index.html" title=""><span class="name">root</span></a></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../../index.html" name="_root_" id="_root_" class="extype">root</a></dd></dl></div></li><li class="indented1 " name="_root_.nfer" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="nfer" class="anchorToMember"></a><a id="nfer:nfer" class="anchorToMember"></a> <span class="permalink"><a href="../../nfer/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../index.html" title="nfer is a Scala package for generating abstractions from event traces."><span class="name">nfer</span></a></span><p class="shortcomment cmt"><b>nfer</b> is a Scala package for generating abstractions from <i>event traces</i>.</p><div class="fullcomment"><div class="comment cmt"><p><b>nfer</b> is a Scala package for generating abstractions from <i>event traces</i>.</p><h4> Introduction </h4><p>nfer allows to define intervals over an event trace. The intervals indicate abstractions
+that for example can be visualized. An interval consists of a name, two time stamps:
+the beginning and the end of the interval, and a map from variable names (strings)
+to values, indicating data that the interval carries.</p><h4> Writing Specifications </h4><p>As an example, consider a scenario where we want to be informed if
+a downlink operation occurs during a 5-minute
+time interval where the flight computer reboots twice.
+This scenario could cause a potential loss of downlink information.
+We want to identify the following intervals.</p><p>A BOOT represents an interval during which the rover software is rebooting.</p><p>A DBOOT (double boot) represents an interval during which the
+rover reboots twice within a 5-minute timeframe.</p><p>A RISK represents an interval during which the rover reboots twice,
+and during which also attempts to downlink information.</p><p>Our objective now is to formalize the definition of such intervals
+in the nfer specification language, and extract these intervals from
+a telemetry stream, based on such a specification.
+Specifically, in this case, we need a formalism for formally defining
+the following three kinds of intervals.</p><p>A BOOT interval starts with a BOOT_S (boot start) event and ends with
+a BOOT_E (boot end) event.</p><p>A DBOOT (double boot) interval consists of two consecutive BOOT intervals,
+with no more than 5-minutes from the end of the first BOOT interval to
+the start of the second BOOT interval.</p><p>A RISK interval is a DBOOT interval during which a DOWNLINK occurs.</p><p>The following time line illustrates a scenario with two BOOTs,
+hence a double boot, and a downlink occurring during this
+period.</p><pre>-----|---------|------------|---------|-------&gt;
+  BOOT_S   BOOT_E   |   BOOT_S     BOOT_E
+                    |
+                 DOWNLINK</pre><p>The intervals can be formalized with the following nfer specification:</p><pre>BOOT :- BOOT_S before BOOT_E
+  where BOOT_E.begin - BOOT_S.end &lt;= <span class="num">5000</span>
+  map {count -&gt; BOOT_S.count}
+
+DBOOT :- b1:BOOT before b2:BOOT
+  where b2.begin - b1.end &lt;= <span class="num">10000</span>
+  map {count -&gt; b1.count}
+
+RISK :- DOWNLINK during DBOOT
+  map {count -&gt; DBOOT.count}</pre><p>The specification consists of three rules, one for each generated
+interval: the name of the generated interval occurs before the
+:- sign. The rules are to be read as follows. A BOOT interval is
+created if a BOOT_S event occurs before a
+BOOT_E event. In addition the count data from the first BOOT_S event is
+inherited to become part of the BOOT interval.</p><p>Likewise, a DBOOT (double boot) interval is created when observing
+a BOOT interval occurring before another BOOT interval with no more
+than 300 seconds in between. Finally, a RISK interval is created when observing a
+DOWNLINK during a DBOOT (double boot) interval.</p><p>The nfer specification language also allows rules to be presented in modules,
+which can import other modules. The specification above can alternatively
+be presented as follows.</p><pre>module Booting {
+  BOOT :- BOOT_S before BOOT_E
+    where BOOT_E.begin - BOOT_S.end &lt;= <span class="num">5000</span>
+    map {count -&gt; BOOT_S.count}
+}
+
+module DoubleBooting {
+  <span class="kw">import</span> Booting;
+
+  DBOOT :- b1:BOOT before b2:BOOT
+    where b2.begin - b1.end &lt;= <span class="num">10000</span>
+    map {count -&gt; b1.count}
+}
+
+module Risking {
+  <span class="kw">import</span> DoubleBooting;
+
+  RISK :- DOWNLINK during DBOOT
+    map {count -&gt; DBOOT.count}
+}</pre><p>In a modular specification it is the last module which becomes the effective one,
+as well as all the modules that it imports transitively.</p><h4> Applying a Specification </h4><p>The following Scala program illustrates how a specification is applied to
+a trace. After an instance of the Nfer class has been instantiated,
+it can be initiated with a specification, for example read from a text file
+(a specification can also be provided directly as a text string). Subsequently
+events can be submitted to the monitor.</p><pre><span class="kw">object</span> Test1 {
+  <span class="kw">def</span> main(args: <span class="std">Array</span>[<span class="std">String</span>]): <span class="std">Unit</span> = {
+    <span class="kw">val</span> nfer = <span class="kw">new</span> Nfer()
+
+    <span class="kw">val</span> fileSpec = <span class="lit">"somePath/spec1.nfer"</span>
+    nfer.specFile(fileSpec)
+
+    nfer.submit(<span class="lit">"BOOT_S"</span>,<span class="num">1000</span>,<span class="lit">"count"</span> -&gt; <span class="num">42</span>)
+    nfer.submit(<span class="lit">"BOOT_E"</span>,<span class="num">2000</span>)
+    nfer.submit(<span class="lit">"BOOT_S"</span>,<span class="num">3000</span>, <span class="lit">"count"</span> -&gt; <span class="num">43</span>)
+    nfer.submit(<span class="lit">"DOWNLINK"</span>,<span class="num">4000</span>)
+    nfer.submit(<span class="lit">"BOOT_E"</span>,<span class="num">5000</span>)
+  }
+}</pre><h4> The nfer Grammar </h4><p>The grammar for the nfer specification language is provided below. The meta symbols used are
+as follows.
+X* means one or more X whereas X+ means one or more.
+[X] means zero or one X.
+X|Y means X or Y.
+';' means the symbol ;.
+specification is a non-terminal.
+X ::= ... defines the non-terminal X.</p><pre>specification ::= rule+ | module+
+module ::= <span class="lit">'module'</span> identifier <span class="lit">'{'</span> [imports] rule* <span class="lit">'}'</span>
+imports ::= <span class="lit">'import'</span> identifier (<span class="lit">','</span> identifier)* <span class="lit">';'</span>
+rule ::= identifier <span class="lit">':-'</span> intervalExpression [whereExpression] [mapExpression] [endPoints]
+intervalExpression ::= primaryIntervalExpression (intervalOp primaryIntervalExpression)*
+primaryIntervalExpression ::= atomicIntervalExpression | parenIntervalExpression
+atomicIntervalExpression ::= [label] identifier
+parenIntervalExpression ::= <span class="lit">'('</span> intervalExpression <span class="lit">')'</span>
+label ::= identifier <span class="lit">':'</span>
+whereExpression ::= <span class="lit">'where'</span> expression
+mapExpression ::= <span class="lit">'map'</span> <span class="lit">'{'</span> identifier <span class="lit">'->'</span> expression (<span class="lit">','</span> identifier <span class="lit">'->'</span> expression)* <span class="lit">'}'</span>
+endPoints ::= <span class="lit">'begin'</span> expression <span class="lit">'end'</span> expression
+intervalOp ::= <span class="lit">'also'</span>|<span class="lit">'before'</span>|<span class="lit">'meet'</span>|<span class="lit">'during'</span>|<span class="lit">'start'</span>|<span class="lit">'finish'</span>|'overlap<span class="lit">'|'</span>slice<span class="lit">'|'</span>coincide'
+expression ::= comparisonExpression (andorOp comparisonExpression)*
+comparisonExpression ::= plusminusExpression (comparisonOp plusminusExpression)*
+plusminusExpression ::= muldivExpression (plusminusOp muldivExpression)*
+muldivExpression ::= unaryExpression (muldivOp unaryExpression)*
+unaryExpression ::=
+stringLiteral | intLiteral | doubleLiteral | booleanLiteral |
+beginTime | endTime | mapField | callExpression |
+<span class="lit">'('</span> expression <span class="lit">')'</span> | unaryOp unaryExpression
+mapField ::= identifier <span class="lit">'.'</span> identifier
+beginTime ::= identifier <span class="lit">'.'</span> BEGIN
+endTime ::= identifier <span class="lit">'.'</span> END
+unaryOp ::= <span class="lit">'-'</span> | <span class="lit">'!'</span>
+muldivOp ::= <span class="lit">'*'</span>  | <span class="lit">'/'</span>  | <span class="lit">'%'</span> )
+plusminusOp ::= <span class="lit">'+'</span>  | <span class="lit">'-'</span>
+comparisonOp ::= <span class="lit">'<'</span> | <span class="lit">'<='</span> | <span class="lit">'>'</span> | <span class="lit">'>='</span> | <span class="lit">'='</span> | <span class="lit">'!='</span>
+andorOp ::= <span class="lit">'&'</span> | <span class="lit">'|'</span>
+callExpression ::= identifier <span class="lit">'('</span> expression (<span class="lit">','</span> expression)* <span class="lit">')'</span></pre></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../../index.html" name="_root_" id="_root_" class="extype">root</a></dd></dl></div></li><li class="indented2 current" name="nfer.util" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="util" class="anchorToMember"></a><a id="util:util" class="anchorToMember"></a> <span class="permalink"><a href="../../nfer/util/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><span class="name">util</span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="nfer" id="nfer" class="extype">nfer</a></dd></dl></div></li><li class="current-entities indented2"><a href="CSV$.html" title="" class="object"></a> <a href="CSV.html" title="" class="class"></a><a href="CSV.html" title="">CSV</a></li><li class="current-entities indented2"><span class="separator"></span> <a href="CSVRow.html" title="Created by rjoshi on 3/23/16." class="class"></a><a href="CSVRow.html" title="Created by rjoshi on 3/23/16.">CSVRow</a></li><li class="current-entities indented2"><span class="separator"></span> <a href="JsonReader.html" title="Class for reading test files from the MonAmi project, for comparing MonAmi with nfer." class="class"></a><a href="JsonReader.html" title="Class for reading test files from the MonAmi project, for comparing MonAmi with nfer.">JsonReader</a></li></ul></div></div><div id="content"><body class="package value"><div id="definition"><div class="big-circle package">p</div><p id="owner"><a href="../index.html" name="nfer" id="nfer" class="extype">nfer</a></p><h1>util<span class="permalink"><a href="../../nfer/util/index.html" title="Permalink"><i class="material-icons"></i></a></span></h1></div><h4 id="signature" class="signature"><span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><span class="name">util</span></span></h4><div id="comment" class="fullcommenttop"></div><div id="mbrsel"><div class="toggle"></div><div id="memberfilter"><i class="material-icons arrow"></i><span class="input"><input placeholder="Filter all members" id="mbrsel-input" type="text" accesskey="/"/></span><i class="clear material-icons"></i></div><div id="filterby"><div id="order"><span class="filtertype">Ordering</span><ol><li class="alpha in"><span>Alphabetic</span></li></ol></div><div id="visbl"><span class="filtertype">Visibility</span><ol><li class="public in"><span>Public</span></li><li class="protected out"><span>Protected</span></li></ol></div></div></div><div id="template"><div id="allMembers"><div id="types" class="types members"><h3>Type Members</h3><ol><li class="indented0 " name="nfer.util.CSV" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="CSVextendsIterable[nfer.util.CSVRow]" class="anchorToMember"></a><a id="CSV:CSV" class="anchorToMember"></a> <span class="permalink"><a href="../../nfer/util/CSV.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">class</span></span> <span class="symbol"><a href="CSV.html" title=""><span class="name">CSV</span></a><span class="result"> extends <span name="scala.Iterable" class="extype">Iterable</span>[<a href="CSVRow.html" name="nfer.util.CSVRow" id="nfer.util.CSVRow" class="extype">CSVRow</a>]</span></span></li><li class="indented0 " name="nfer.util.CSVRow" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="CSVRowextendsProductwithSerializable" class="anchorToMember"></a><a id="CSVRow:CSVRow" class="anchorToMember"></a> <span class="permalink"><a href="../../nfer/util/CSVRow.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">case class</span></span> <span class="symbol"><a href="CSVRow.html" title="Created by rjoshi on 3/23/16."><span class="name">CSVRow</span></a><span class="params">(<span name="hdr">hdr: <span name="scala.Predef.Map" class="extype">Map</span>[<span name="scala.Predef.String" class="extype">String</span>, <span name="scala.Int" class="extype">Int</span>]</span>, <span name="body">body: <span name="scala.List" class="extype">List</span>[<span name="scala.Predef.String" class="extype">String</span>]</span>)</span><span class="result"> extends <span name="scala.Product" class="extype">Product</span> with <span name="scala.Serializable" class="extype">Serializable</span></span></span><p class="shortcomment cmt">Created by rjoshi on 3/23/16.</p></li><li class="indented0 " name="nfer.util.JsonReader" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="JsonReaderextendsAnyRef" class="anchorToMember"></a><a id="JsonReader:JsonReader" class="anchorToMember"></a> <span class="permalink"><a href="../../nfer/util/JsonReader.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">class</span></span> <span class="symbol"><a href="JsonReader.html" title="Class for reading test files from the MonAmi project, for comparing MonAmi with nfer."><span class="name">JsonReader</span></a><span class="result"> extends <span name="scala.AnyRef" class="extype">AnyRef</span></span></span><p class="shortcomment cmt">Class for reading test files from the MonAmi project,
+for comparing MonAmi with nfer.</p></li></ol></div><div class="values members"><h3>Value Members</h3><ol><li class="indented0 " name="nfer.util.CSV" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="CSV" class="anchorToMember"></a><a id="CSV:CSV" class="anchorToMember"></a> <span class="permalink"><a href="../../nfer/util/CSV$.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">object</span></span> <span class="symbol"><a href="CSV$.html" title=""><span class="name">CSV</span></a></span></li></ol></div></div><div id="inheritedMembers"></div><div id="groupedMembers"><div name="Ungrouped" class="group"><h3>Ungrouped</h3></div></div></div><div id="tooltip"></div><div id="footer"></div></body></div></div></div></body></html>

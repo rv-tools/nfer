@@ -1,0 +1,322 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>nfer - nfer documentation - nfer</title>
+          <meta name="description" content="nfer - nfer documentation - nfer" />
+          <meta name="keywords" content="nfer nfer documentation nfer" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../index.html';
+            var hash = 'nfer.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../lib/package_big.png" />
+        
+        <h1>nfer</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nfer</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p><b>nfer</b> is a Scala package for generating abstractions from <i>event traces</i>.
+*</p><h4> Introduction </h4><p>*
+nfer allows to define intervals over an event trace. The intervals indicate abstractions
+that for example can be visualized. An interval consists of a name, two time stamps:
+the beginning and the end of the interval, and a map from variable names (strings)
+to values, indicating data that the interval carries.
+*</p><h4> Writing Specifications </h4><p>*
+As an example, consider a scenario where we want to be informed if
+a downlink operation occurs during a 5-minute
+time interval where the flight computer reboots twice.
+This scenario could cause a potential loss of downlink information.
+We want to identify the following intervals.
+*
+A BOOT represents an interval during which the rover software is rebooting.
+*
+A DBOOT (double boot) represents an interval during which the
+rover reboots twice within a 5-minute timeframe.
+*
+A RISK represents an interval during which the rover reboots twice,
+and during which also attempts to downlink information.
+*
+Our objective now is to formalize the definition of such intervals
+in the nfer specification language, and extract these intervals from
+a telemetry stream, based on such a specification.
+Specifically, in this case, we need a formalism for formally defining
+the following three kinds of intervals.
+*
+A BOOT interval starts with a BOOT_S (boot start) event and ends with
+a BOOT_E (boot end) event.
+*
+A DBOOT (double boot) interval consists of two consecutive BOOT intervals,
+with no more than 5-minutes from the end of the first BOOT interval to
+the start of the second BOOT interval.
+*
+A RISK interval is a DBOOT interval during which a DOWNLINK occurs.
+*
+The following time line illustrates a scenario with two BOOTs,
+hence a double boot, and a downlink occurring during this
+period.
+*</p><pre>-----|---------|------------|---------|-------&gt;
+BOOT_S   BOOT_E   |   BOOT_S     BOOT_E
+|
+DOWNLINK</pre><p>*
+The intervals can be formalized with the following nfer specification:
+*</p><pre>BOOT :- BOOT_S before BOOT_E
+where BOOT_E.begin - BOOT_S.end &lt;= <span class="num">5000</span>
+map {count -&gt; BOOT_S.count}
+*
+DBOOT :- b1:BOOT before b2:BOOT
+where b2.begin - b1.end &lt;= <span class="num">10000</span>
+map {count -&gt; b1.count}
+*
+RISK :- DOWNLINK during DBOOT
+map {count -&gt; DBOOT.count}
+*</pre><p>*
+The specification consists of three rules, one for each generated
+interval: the name of the generated interval occurs before the
+:- sign. The rules are to be read as follows. A BOOT interval is
+created if a BOOT_S event occurs before a
+BOOT_E event. In addition the count data from the first BOOT_S event is
+inherited to become part of the BOOT interval.
+*
+Likewise, a DBOOT (double boot) interval is created when observing
+a BOOT interval occurring before another BOOT interval with no more
+than 300 seconds in between. Finally, a RISK interval is created when observing a
+DOWNLINK during a DBOOT (double boot) interval.
+*
+The nfer specification language also allows rules to be presented in modules,
+which can import other modules. The specification above can alternatively
+be presented as follows.
+*</p><pre>module Booting {
+BOOT :- BOOT_S before BOOT_E
+where BOOT_E.begin - BOOT_S.end &lt;= <span class="num">5000</span>
+map {count -&gt; BOOT_S.count}
+}
+*
+module DoubleBooting {
+<span class="kw">import</span> Booting;
+*
+DBOOT :- b1:BOOT before b2:BOOT
+where b2.begin - b1.end &lt;= <span class="num">10000</span>
+map {count -&gt; b1.count}
+}
+*
+module Risking {
+<span class="kw">import</span> DoubleBooting;
+*
+RISK :- DOWNLINK during DBOOT
+map {count -&gt; DBOOT.count}
+}</pre><p>*
+In a modular specification it is the last module which becomes the effective one,
+as well as all the modules that it imports transitively.
+*</p><h4> Applying a Specification </h4><p>*
+The following Scala program illustrates how a specification is applied to
+a trace. After an instance of the Nfer class has been instantiated,
+it can be initiated with a specification, for example read from a text file
+(a specification can also be provided directly as a text string). Subsequently
+events can be submitted to the monitor.
+*</p><pre><span class="kw">object</span> Test1 {
+<span class="kw">def</span> main(args: <span class="std">Array</span>[<span class="std">String</span>]): <span class="std">Unit</span> = {
+<span class="kw">val</span> nfer = <span class="kw">new</span> Nfer()
+*
+<span class="kw">val</span> fileSpec = <span class="lit">"/Users/khavelun/Desktop/spec1.nfer"</span>
+nfer.specFile(fileSpec)
+*
+nfer.submit(<span class="lit">"BOOT_S"</span>,<span class="num">1000</span>,<span class="lit">"count"</span> -&gt; <span class="num">42</span>)
+nfer.submit(<span class="lit">"BOOT_E"</span>,<span class="num">2000</span>)
+nfer.submit(<span class="lit">"BOOT_S"</span>,<span class="num">3000</span>, <span class="lit">"count"</span> -&gt; <span class="num">43</span>)
+nfer.submit(<span class="lit">"DOWNLINK"</span>,<span class="num">4000</span>)
+nfer.submit(<span class="lit">"BOOT_E"</span>,<span class="num">5000</span>)
+}
+}</pre><p>*</p><h4> The nfer Grammar </h4><p>The grammar for the nfer specification language is provided below. The meta symbols used are
+as follows.
+X* means one or more X whereas X+ means one or more.
+[X] means zero or one X.
+X|Y means X or Y.
+';' means the symbol ;.
+specification is a non-terminal.
+X ::= ... defines the non-terminal X.</p><pre>specification ::= rule+ | module+
+module ::= <span class="lit">'module'</span> identifier <span class="lit">'{'</span> [imports] rule* <span class="lit">'}'</span>
+imports ::= <span class="lit">'import'</span> identifier (<span class="lit">','</span> identifier)* <span class="lit">';'</span>
+rule ::= identifier <span class="lit">':-'</span> intervalExpression [whereExpression] [mapExpression] [endPoints]
+intervalExpression ::= primaryIntervalExpression (intervalOp primaryIntervalExpression)*
+primaryIntervalExpression ::= atomicIntervalExpression | parenIntervalExpression
+atomicIntervalExpression ::= [label] identifier
+parenIntervalExpression ::= <span class="lit">'('</span> intervalExpression <span class="lit">')'</span>
+label ::= identifier <span class="lit">':'</span>
+whereExpression ::= <span class="lit">'where'</span> expression
+mapExpression ::= <span class="lit">'map'</span> <span class="lit">'{'</span> identifier <span class="lit">'->'</span> expression (<span class="lit">','</span> identifier <span class="lit">'->'</span> expression)* <span class="lit">'}'</span>
+endPoints ::= <span class="lit">'begin'</span> expression <span class="lit">'end'</span> expression
+intervalOp ::= <span class="lit">'also'</span>|<span class="lit">'before'</span>|<span class="lit">'meet'</span>|<span class="lit">'during'</span>|<span class="lit">'start'</span>|<span class="lit">'finish'</span>|'overlap<span class="lit">'|'</span>slice<span class="lit">'|'</span>coincide'
+expression ::= comparisonExpression (andorOp comparisonExpression)*
+comparisonExpression ::= plusminusExpression (comparisonOp plusminusExpression)*
+plusminusExpression ::= muldivExpression (plusminusOp muldivExpression)*
+muldivExpression ::= unaryExpression (muldivOp unaryExpression)*
+unaryExpression ::=
+stringLiteral | intLiteral | doubleLiteral | booleanLiteral |
+beginTime | endTime | mapField | callExpression |
+<span class="lit">'('</span> expression <span class="lit">')'</span> | unaryOp unaryExpression
+mapField ::= identifier <span class="lit">'.'</span> identifier
+beginTime ::= identifier <span class="lit">'.'</span> BEGIN
+endTime ::= identifier <span class="lit">'.'</span> END
+unaryOp ::= <span class="lit">'-'</span> | <span class="lit">'!'</span>
+muldivOp ::= <span class="lit">'*'</span>  | <span class="lit">'/'</span>  | <span class="lit">'%'</span> )
+plusminusOp ::= <span class="lit">'+'</span>  | <span class="lit">'-'</span>
+comparisonOp ::= <span class="lit">'<'</span> | <span class="lit">'<='</span> | <span class="lit">'>'</span> | <span class="lit">'>='</span> | <span class="lit">'='</span> | <span class="lit">'!='</span>
+andorOp ::= <span class="lit">'&'</span> | <span class="lit">'|'</span>
+callExpression ::= identifier <span class="lit">'('</span> expression (<span class="lit">','</span> expression)* <span class="lit">')'</span></pre></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="nfer"><span>nfer</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="nfer.Interval" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IntervalextendsProductwithSerializable"></a>
+      <a id="Interval:Interval"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Interval.html"><span class="name">Interval</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="begin">begin: <span class="extype" name="scala.Int">Int</span></span>, <span name="end">end: <span class="extype" name="scala.Int">Int</span></span>, <span name="data">data: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Representation of intervals generated by nfer.</p>
+    </li><li name="nfer.Nfer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NferextendsAnyRef"></a>
+      <a id="Nfer:Nfer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Nfer.html"><span class="name">Nfer</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Class offering features for writing nfer specifications and applying them to a
+traces of events.</p>
+    </li><li name="nfer.Operation" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="OperationextendsAnyRef"></a>
+      <a id="Operation:Operation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Operation.html"><span class="name">Operation</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">User defined operations.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="nfer.util" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="util"></a>
+      <a id="util:util"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="util/package.html"><span class="name">util</span></a>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../lib/template.js"></script>
+    </body>
+      </html>

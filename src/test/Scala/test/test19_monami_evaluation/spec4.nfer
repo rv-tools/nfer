@@ -1,0 +1,14 @@
+// ================
+// Specification 4:
+// ----------------
+
+// MomAmi:
+// forall A, B, C . (A o B & B o C) -> !(A o C)
+
+IVAL :- BEGIN before END
+  where BEGIN.interval = END.interval
+  map {interval -> BEGIN.interval, data -> BEGIN.data}
+
+FOUND :- A:IVAL overlap B:IVAL overlap C:IVAL
+  where A.begin < B.begin & B.begin < C.begin &
+  C.begin < A.end

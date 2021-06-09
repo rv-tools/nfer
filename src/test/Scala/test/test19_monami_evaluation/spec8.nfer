@@ -1,0 +1,27 @@
+// ================
+// Specification 8:
+// ----------------
+
+/*
+In this case, an instrument power-on command (INS_ON) fails (INS_FAIL) and then recovers
+(INS_RECOVER). Since the behavior is predictable, and benign, the warning is labeled as being expected.
+*/
+
+/* MonAmi:
+!exist O, F, R .
+  O("INS_ON") & F("INS_FAIL") & R("INS_RECOVER") &
+  O < F & F < R &
+  !EXISTS X . (X("INS_ON) | X("INS_RECOVER")) & O < X & X < R) // minimality
+*/
+
+// Interpreted WITH minimality.
+
+IVAL :- BEGIN before END
+  where BEGIN.interval = END.interval
+  map {interval -> BEGIN.interval, data -> BEGIN.data}
+
+ON :- IVAL where IVAL.data = "INS_ON"
+FAIL :- IVAL where IVAL.data = "INS_FAIL"
+RECOVER :- IVAL where IVAL.data = "INS_RECOVER"
+EXEC :- ON before RECOVER
+FOUND :- FAIL during EXEC
