@@ -139,7 +139,9 @@ The following Scala program illustrates how a specification is applied to
 a trace. 
 We first import the nfer library.
 After an instance of the `Nfer` class has been created,
-it can be initiated with a specification, for example read from a text file (a specification can also be provided directly as a text string). Subsequently events can be submitted to the monitor. Finally we print out the generated intervals.
+it can be initiated with a specification, for example read from a text file (a specification can also be provided directly as a text string). 
+In this case we read in the specification in `spec.nfer` shown above (without modules).
+Subsequently events can be submitted to the monitor. Finally we print out the generated intervals.
 
 ```scala
 import nfer._
@@ -160,7 +162,7 @@ object Example {
   }
 }
 ```
-The outout printed by `nfer.printIntervals()` is in this case the following.
+The output printed by `nfer.printIntervals()` is in this case the following.
 
 ```
 =================================
@@ -175,6 +177,14 @@ RISK : 1
   Interval("RISK",12923.00000,48028.00000,Map("count" -> 42))
 ---------------------------------
 ```
+
+We can see that two `BOOT` intervals are generated, one `DBOOT` interval, and one `RISK` interval. E.g. the `DBOOT` interval:
+
+```
+  Interval("DBOOT",12923.00000,48028.00000,Map("count" -> 42))
+```
+
+starts at time `12923`, ends at time `48028`, and carries the data defined by the map `Map("count" -> 42)`. That is, `count` has the value 42.
 
 ## The nfer Grammar
 
