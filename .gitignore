@@ -1,0 +1,8 @@
+target
+/.bsp/
+/.idea/
+
+.DS_Store
+*~
+results
+src/test/Scala/test/msl

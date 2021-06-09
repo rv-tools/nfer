@@ -77,7 +77,7 @@ BOOT_S   BOOT_E     |       BOOT_S       BOOT_E
                  DOWNLINK
 ```
 
-The intervals can be formalized with the following nfer specification:
+The intervals can be formalized with the following nfer specification, say stored in a file `spec.nfer`:
 
 ```
 BOOT :- BOOT_S before BOOT_E
@@ -136,33 +136,51 @@ as well as all the modules that it imports transitively.
 ## Applying a Specification
 
 The following Scala program illustrates how a specification is applied to
-a trace. After an instance of the `Nfer` class has been created,
-it can be initiated with a specification, for example read from a text file
-(a specification can also be provided directly as a text string). Subsequently
-events can be submitted to the monitor.
+a trace. 
+We first import the nfer library.
+After an instance of the `Nfer` class has been created,
+it can be initiated with a specification, for example read from a text file (a specification can also be provided directly as a text string). Subsequently events can be submitted to the monitor. Finally we print out the generated intervals.
 
 ```scala
+import nfer._
+
 object Example {
   def main(args: Array[String]): Unit = {
     val nfer = new Nfer()
-  
+
     nfer.specFile("somePath/spec.nfer")
-  
+
     nfer.submit("BOOT_S", 12923, "count" -> 42)
     nfer.submit("BOOT_E", 13112)
     nfer.submit("DOWNLINK", 20439)
     nfer.submit("BOOT_S", 27626, "count" -> 43)
     nfer.submit("BOOT_E", 48028)
+
+    nfer.printIntervals()
   }
 }
 ```
+The outout printed by `nfer.printIntervals()` is in this case the following.
 
+```
+=================================
+    Generated Intervals:
+---------------------------------
+BOOT : 2
+  Interval("BOOT",12923.00000,13112.00000,Map("count" -> 42))
+  Interval("BOOT",27626.00000,48028.00000,Map("count" -> 43))
+DBOOT : 1
+  Interval("DBOOT",12923.00000,48028.00000,Map("count" -> 42))
+RISK : 1
+  Interval("RISK",12923.00000,48028.00000,Map("count" -> 42))
+---------------------------------
+```
 
 ## The nfer Grammar
 
-The grammar for the nfer specification language is provided below. 
+We now present the grammar for the specification language.
 
-The meta symbols used are as follows.
+The meta symbols used for defining the grammar are as follows.
 
 - `X*` means zero or more `X` 
 - `X+` means one or more `X`.
@@ -174,6 +192,8 @@ The meta symbols used are as follows.
 - `<spec>` means a non-terminal, in this case that of specifications.
 - `X ::= ...` defines the non-terminal `X`.
 - `int-<exp>` means `<exp>`, but with the informal annotation that it must be an integer.
+
+The grammar for the nfer specification language is as follows. 
 
 ```
 <spec> ::= 
