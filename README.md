@@ -135,7 +135,7 @@ as well as all the modules that it imports transitively.
 
 ## Applying a Specification
 
-The following Scala program illustrates how a specification is applied to
+The following Scala program (located in the diretory `src/test/Scala/test/test0`) illustrates how a specification is applied to
 a trace. 
 We first import the nfer library.
 After an instance of the `Nfer` class has been created,
@@ -144,13 +144,15 @@ In this case we read in the specification in `spec.nfer` shown above (without mo
 Subsequently events can be submitted to the monitor. Finally we print out the generated intervals.
 
 ```scala
+package test.test0
+
 import nfer._
 
 object Example {
   def main(args: Array[String]): Unit = {
     val nfer = new Nfer()
 
-    nfer.specFile("somePath/spec.nfer")
+    nfer.specFile("src/test/Scala/test/test0/spec.nfer")
 
     nfer.submit("BOOT_S", 12923, "count" -> 42)
     nfer.submit("BOOT_E", 13112)
@@ -161,6 +163,8 @@ object Example {
     nfer.printIntervals()
   }
 }
+
+
 ```
 The output printed by `nfer.printIntervals()` is in this case the following.
 
@@ -295,3 +299,11 @@ Sean Kauffman, Klaus Havelund, Rajeev Joshi, and Sebastian Fischmeister.
 ## Developers
 
 The nfer system was conceptualized and developed by (in alphabetic order): Klaus Havelund, Rajeev Joshi, and Sean Kauffman during Sean Kauffman's internship at JPL.
+
+## C version of nfer
+
+Sean Kauffman implemented a C version of nfer, wrapped in a Python API:
+
+[nfer in C wrapped in a Python API](https://bitbucket.org/seanmk/nfer/src/master/)
+
+The C version uses a different algorithm, and also allows a limited form of negation.

@@ -1,0 +1,9 @@
+BOOT :- BOOT_S before BOOT_E
+   map {count -> BOOT_S.count}
+
+DBOOT :- b1:BOOT before b2:BOOT
+   where b2.begin - b1.end <= 300000
+   map {count -> b1.count}
+
+RISK :- DOWNLINK during DBOOT
+   map {count -> DBOOT.count}
