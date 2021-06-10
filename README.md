@@ -300,6 +300,11 @@ Sean Kauffman, Klaus Havelund, Rajeev Joshi, and Sebastian Fischmeister.
 
 The nfer system was conceptualized and developed by (in alphabetic order): Klaus Havelund, Rajeev Joshi, and Sean Kauffman during Sean Kauffman's internship at JPL.
 
+## Test cases
+
+Several test cases were originally performed using properties and log files from JPL's [MSL](https://mars.nasa.gov/msl/home/) mission. 
+These have not been open sourced.
+
 ## C version of nfer
 
 Sean Kauffman implemented a C version of nfer, wrapped in a Python API:
