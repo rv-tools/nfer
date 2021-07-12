@@ -311,4 +311,4 @@ Sean Kauffman implemented a C version of nfer, wrapped in a Python API:
 
 [nfer in C wrapped in a Python API](https://bitbucket.org/seanmk/nfer/src/master/)
 
-The C version uses a different algorithm, and also allows a limited form of negation.
+The C version uses a different algorithm, and also allows (a limited form of) negation.
