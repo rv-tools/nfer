@@ -281,7 +281,7 @@ The grammar for the nfer specification language is as follows.
 <call> ::= <ident> '(' <exp>,* ')'
 ```
 
-## Installing DejaVu:
+## Installing nfer:
 
 The directory ``out`` contains the nfer jar file:
 
